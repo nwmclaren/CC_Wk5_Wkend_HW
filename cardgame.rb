@@ -1,6 +1,6 @@
 # Carry out static testing on the code below.
 # Comment on any errors that you see below.
-#```ruby wasn't comented 
+#```ruby wasn't commented
 ### Testing task 2 code:
 
 # Carry out dynamic testing on the code below.
@@ -11,32 +11,36 @@ require_relative('card.rb') # no pathname
 # no attr_reader, accessor etc.
 
 class CardGame
-
+#  attr_reader :result
   # no attr_reader, accessor etc.
 
-  # no def initialize
+attr_reader :game
+
+def initialize(game)
+  @game = game
+end
 
   def checkforAce(card)
-    if card.value = 1 # = instead of ==
+    if card.value == 1
       return true
     else
       return false
     end
   end
 
-  dif highest_card(card1 card2) # dif instead of def, no comma between arguments
+  def highest_card(card1,card2)
   if card1.value > card2.value
-    return card.name      # no card argument passed through
+    return card1.value.to_s() + " " + card1.suit + " wins"
   else
-    card2 #return missing
+    return card2.value.to_s() + " " + card2.suit + " wins"
   end
 end
-end #unnessecary end
 
-def self.cards_total(cards)
-  total # no reference to what total equals
+def cards_total(cards)
+  total = 0
   for card in cards
     total += card.value
-    return "You have a total of" + total
   end
+  return "You have a total of " + total.to_s()
+end
 end
